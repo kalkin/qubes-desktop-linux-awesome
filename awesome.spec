@@ -42,11 +42,13 @@ BuildRequires:	pkgconfig(xcb-util) >= 0.3.8
 BuildRequires:	pkgconfig(xcb-keysyms) >= 0.3.4
 BuildRequires:	pkgconfig(xcb-icccm) >= 0.3.8
 BuildRequires:	pkgconfig(xcb-cursor)
+BuildRequires:	pkgconfig(xcb-xrm)
 BuildRequires:	pkgconfig(cairo-xcb)
 BuildRequires:	pkgconfig(libstartup-notification-1.0) >= 0.10
 BuildRequires:	pkgconfig(xproto) >= 7.0.15
 BuildRequires:	pkgconfig(libxdg-basedir) >= 1.0.0
 BuildRequires:	pkgconfig(dbus-1)
+BuildRequires:	libxkbcommon-x11-devel
 
 BuildRequires:	lua-lgi
 BuildRequires:	pkgconfig(pango) >= 1.19.3
