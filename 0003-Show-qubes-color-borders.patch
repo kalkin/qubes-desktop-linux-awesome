@@ -1,0 +1,62 @@
+From 2dcb84a33f8c9c625f2336567507924aad21e606 Mon Sep 17 00:00:00 2001
+From: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
+Date: Mon, 21 Aug 2017 13:06:39 +0200
+Subject: [PATCH 3/4] Show qubes color borders
+
+---
+ awesomerc.lua | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/awesomerc.lua b/awesomerc.lua
+index db37cb62..01e0563b 100644
+--- a/awesomerc.lua
++++ b/awesomerc.lua
+@@ -14,6 +14,8 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
+ -- Enable VIM help for hotkeys widget when client with matching name is opened:
+ require("awful.hotkeys_popup.keys.vim")
+ 
++local qubes = require("qubes")
++
+ -- {{{ Error handling
+ -- @DOC_ERROR_HANDLING@
+ -- Check if awesome encountered an error during startup and fell back to
+@@ -512,12 +514,12 @@ awful.rules.rules = {
+ 
+ -- {{{ Signals
+ -- Signal function to execute when a new client appears.
+--- @DOC_MANAGE_HOOK@
+ client.connect_signal("manage", function (c)
+     -- Set the windows at the slave,
+     -- i.e. put it at the end of others instead of setting it master.
+     -- if not awesome.startup then awful.client.setslave(c) end
+ 
++    qubes.manage(c)
+     if awesome.startup and
+       not c.size_hints.user_position
+       and not c.size_hints.program_position then
+@@ -543,7 +545,9 @@ client.connect_signal("request::titlebars", function(c)
+         end)
+     )
+ 
+-    awful.titlebar(c) : setup {
++    qubes.manage(c)
++    awful.titlebar(c, { bg_normal = qubes.get_colour(c),
++                        bg_focus = qubes.get_colour_focus(c) } ) : setup {
+         { -- Left
+             awful.titlebar.widget.iconwidget(c),
+             buttons = buttons,
+@@ -577,9 +581,8 @@ client.connect_signal("mouse::enter", function(c)
+     end
+ end)
+ 
+--- @DOC_BORDER@
+-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
++client.connect_signal("focus", function(c) c.border_color = qubes.get_colour_focus(c) end)
++client.connect_signal("unfocus", function(c) c.border_color = qubes.get_colour(c) end)
+ -- }}}
+ 
+ 
+-- 
+2.13.2
+
