@@ -1,0 +1,52 @@
+From e85916da5af82bd8fa135ed383b28de9646ebdd3 Mon Sep 17 00:00:00 2001
+From: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
+Date: Mon, 21 Aug 2017 13:07:33 +0200
+Subject: [PATCH 4/4] Show domain name in titles
+
+---
+ awesomerc.lua | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+
+diff --git a/awesomerc.lua b/awesomerc.lua
+index 01e0563b..856869db 100644
+--- a/awesomerc.lua
++++ b/awesomerc.lua
+@@ -11,11 +11,26 @@ local beautiful = require("beautiful")
+ local naughty = require("naughty")
+ local menubar = require("menubar")
+ local hotkeys_popup = require("awful.hotkeys_popup").widget
++
+ -- Enable VIM help for hotkeys widget when client with matching name is opened:
+ require("awful.hotkeys_popup.keys.vim")
+ 
+ local qubes = require("qubes")
+ 
++function titlewidget(c)
++    local textbox = require("wibox.widget.textbox")
++    local ret = textbox()
++
++    local function update()
++        ret:set_text( c.prefix .. c.name or "<unknown>")
++    end
++    c:connect_signal("property::name", update)
++    update()
++
++    return ret
++end
++
++
+ -- {{{ Error handling
+ -- @DOC_ERROR_HANDLING@
+ -- Check if awesome encountered an error during startup and fell back to
+@@ -556,7 +571,7 @@ client.connect_signal("request::titlebars", function(c)
+         { -- Middle
+             { -- Title
+                 align  = "center",
+-                widget = awful.titlebar.widget.titlewidget(c)
++                widget = titlewidget(c)
+             },
+             buttons = buttons,
+             layout  = wibox.layout.flex.horizontal
+-- 
+2.13.2
+
