@@ -15,8 +15,6 @@ Source0:	https://github.com/awesomeWM/awesome-releases/raw/master/%{name}-%{vers
 Source1:    qubes.lua.in
 Patch1:		0001-Set-default-editor-to-vi.patch
 Patch2:		0002-Use-dex-autostart-to-run-xdg-desktop-files.patch
-Patch100:	awesome-3.5.5-qubes-prefix.patch
-Patch110:	awesome-3.5.5-qubes.patch
 
 BuildRequires:	cmake >= 3.0.0
 
@@ -98,9 +96,6 @@ cp %{_sourcedir}/qubes.lua.in lib/
 
 %patch1 -p1
 %patch2 -p1
-
-%patch100 -p1 -b .qubes-prefix
-%patch110 -p1 -b .qubes
 
 %build
 mkdir build; pushd build
