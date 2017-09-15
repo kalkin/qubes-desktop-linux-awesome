@@ -138,6 +138,9 @@ desktop-file-validate %{buildroot}%{_datadir}/xsessions/%{name}.desktop
 
 
 %changelog
+* Fri Sep 15 2017 Bahtiar `kalkin` Gadimov <bahtiar@gadimov.de> - 4.1-4
+- Migrate to Awesome 4.1
+
 * Sat Oct 25 2014 Wojciech Porczyk <woju@invisiblethingslab.com> - 3.5.5-4
 - qubes patches
 
