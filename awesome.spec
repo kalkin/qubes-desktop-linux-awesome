@@ -3,7 +3,7 @@
 %endif
 
 Name:		awesome
-Version:	4.1
+Version:	4.2
 Release:	1%{?dist}
 Epoch:		1000
 Summary:	Highly configurable, framework window manager for X. Fast, light and extensible
