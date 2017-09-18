@@ -22,7 +22,7 @@ index 3d087531..db37cb62 100644
 +-- things we do want (in particular xscreensaver) that are listed as XFCE only.
 +-- It may start some things that are not needed, (eg xfsettingsd) but this does
 +-- not seem to cause a problem.
-+awful.spawn("dex-autostart -a -e XFCE")
++awful.spawn('bash -c "pgrep -f -a mqui.tray | grep -v $$ || dex-autostart -a -e XFCE"')
 +-- }}}
 -- 
 2.13.2
