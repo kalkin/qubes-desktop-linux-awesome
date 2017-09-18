@@ -17,6 +17,7 @@ Patch1:		0001-Set-default-editor-to-vi.patch
 Patch2:		0002-Use-dex-autostart-to-run-xdg-desktop-files.patch
 Patch3:		0003-Show-qubes-color-borders.patch
 Patch4:		0004-Show-domain-name-in-titles.patch
+Patch5:		0005-Add-QubesOS-specific-menu.patch
 
 BuildRequires:	cmake >= 3.0.0
 
@@ -100,6 +101,7 @@ cp %{_sourcedir}/qubes.lua.in lib/qubes.lua
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 mkdir build; pushd build
