@@ -138,6 +138,9 @@ desktop-file-validate %{buildroot}%{_datadir}/xsessions/%{name}.desktop
 
 
 %changelog
+* Tue Sep 19 2017 Bahtiar `kalkin` Gadimov <bahtiar@gadimov.de> - 4.2-1
+- Migrate to Awesome 4.2
+
 * Sat Aug 12 2017 David Hobach <tripleh@hackingthe.net> - 3.5.9-4
 - fixed https://github.com/QubesOS/qubes-issues/issues/2780
 - added patch to make the border colors work with Qubes 4.0rc1
