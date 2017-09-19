@@ -16,7 +16,7 @@ Source1:    qubes.lua.in
 Patch1:		0001-Set-default-editor-to-vi.patch
 Patch100:	awesome-3.5.5-qubes-prefix.patch
 Patch110:	awesome-3.5.5-qubes.patch
-Patch120:	awesome-3.5.5-dex-autostart.patch
+Patch2:		0002-Use-dex-autostart-to-run-xdg-desktop-files.patch
 
 BuildRequires:	cmake >= 3.0.0
 
@@ -99,7 +99,7 @@ cp %{_sourcedir}/qubes.lua.in lib/
 %patch1 -p1
 %patch100 -p1 -b .qubes-prefix
 %patch110 -p1 -b .qubes
-%patch120 -p1 -b .dex-autostart
+%patch2 -p1
 
 %build
 mkdir build; pushd build
