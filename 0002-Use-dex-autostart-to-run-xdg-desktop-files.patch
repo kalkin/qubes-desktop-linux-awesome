@@ -1,4 +1,4 @@
-From d2e2a62ad09ae7b2fd2b906bf6a3dc7a53e6e14d Mon Sep 17 00:00:00 2001
+From eeb68077eb9cb8e91a27b07329528d619e6a6030 Mon Sep 17 00:00:00 2001
 From: Mark Walters <markwalters1009@gmail.com>
 Date: Sat, 10 Sep 2016 18:07:26 +0100
 Subject: [PATCH] Use dex-autostart to run xdg desktop files
@@ -14,7 +14,7 @@ Signed-off-by: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
  1 file changed, 4 insertions(+)
 
 diff --git a/awesomerc.lua b/awesomerc.lua
-index 0130b0d7..7f4c9954 100644
+index 0130b0d7..b83b2eb7 100644
 --- a/awesomerc.lua
 +++ b/awesomerc.lua
 @@ -582,3 +582,7 @@ end)
@@ -24,7 +24,7 @@ index 0130b0d7..7f4c9954 100644
 +
 +-- Use dex to run the xdg autostart files
 +-- for the moment run the ones for XFCE
-+awful.util.spawn_with_shell("dex-autostart -a -e XFCE")
++awful.spawn('bash -c "pgrep -f -a mqui.tray | grep -v $$ || dex-autostart -a -e XFCE"')
 -- 
 2.14.1
 

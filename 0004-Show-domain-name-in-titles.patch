@@ -1,4 +1,4 @@
-From 7286d87a0ff8961d98f7ea0b8f1415f788aabfaa Mon Sep 17 00:00:00 2001
+From 2be77bd99d5e5e7be41df80fb16f4ac836d875b5 Mon Sep 17 00:00:00 2001
 From: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
 Date: Mon, 21 Aug 2017 13:07:33 +0200
 Subject: [PATCH] Show domain name in titles
@@ -9,7 +9,7 @@ Signed-off-by: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
  1 file changed, 13 insertions(+), 1 deletion(-)
 
 diff --git a/awesomerc.lua b/awesomerc.lua
-index 8266b4ad..1aee229b 100644
+index 571a1190..af841a24 100644
 --- a/awesomerc.lua
 +++ b/awesomerc.lua
 @@ -17,6 +17,18 @@ require("awful.hotkeys_popup.keys")
