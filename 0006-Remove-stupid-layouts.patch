@@ -1,0 +1,41 @@
+From 367352a5bf34c93a149eaf92a1e9498bbec38a10 Mon Sep 17 00:00:00 2001
+From: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
+Date: Sat, 10 Feb 2018 15:28:25 +0100
+Subject: [PATCH] Remove stupid layouts
+
+---
+ awesomerc.lua | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
+
+diff --git a/awesomerc.lua b/awesomerc.lua
+index 180bf33..639dd07 100644
+--- a/awesomerc.lua
++++ b/awesomerc.lua
+@@ -81,22 +81,16 @@ modkey = "Mod4"
+ -- @DOC_LAYOUT@
+ -- Table of layouts to cover with awful.layout.inc, order matters.
+ awful.layout.layouts = {
+-    awful.layout.suit.floating,
+     awful.layout.suit.tile,
+     awful.layout.suit.tile.left,
+     awful.layout.suit.tile.bottom,
+     awful.layout.suit.tile.top,
++    awful.layout.suit.floating,
+     awful.layout.suit.fair,
+     awful.layout.suit.fair.horizontal,
+-    awful.layout.suit.spiral,
+-    awful.layout.suit.spiral.dwindle,
+     awful.layout.suit.max,
+     awful.layout.suit.max.fullscreen,
+-    awful.layout.suit.magnifier,
+-    awful.layout.suit.corner.nw,
+-    -- awful.layout.suit.corner.ne,
+-    -- awful.layout.suit.corner.sw,
+-    -- awful.layout.suit.corner.se,
++    awful.layout.suit.magnifier
+ }
+ -- }}}
+ 
+-- 
+2.13.6
+
