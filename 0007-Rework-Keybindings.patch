@@ -1,0 +1,73 @@
+From ba4ba49ca9f72522498b9d4a91282be3130d1008 Mon Sep 17 00:00:00 2001
+From: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
+Date: Sat, 10 Feb 2018 15:40:02 +0100
+Subject: [PATCH] Rework Keybindings
+
+---
+ awesomerc.lua | 16 +++++++---------
+ 1 file changed, 7 insertions(+), 9 deletions(-)
+
+diff --git a/awesomerc.lua b/awesomerc.lua
+index 639dd07..6b56f3e 100644
+--- a/awesomerc.lua
++++ b/awesomerc.lua
+@@ -267,7 +267,7 @@ root.buttons(gears.table.join(
+ -- {{{ Key bindings
+ -- @DOC_GLOBAL_KEYBINDINGS@
+ globalkeys = gears.table.join(
+-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
++    awful.key({ modkey,           }, "F1",      hotkeys_popup.show_help,
+               {description="show help", group="awesome"}),
+     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
+               {description = "view previous", group = "tag"}),
+@@ -296,10 +296,8 @@ globalkeys = gears.table.join(
+               {description = "swap with next client by index", group = "client"}),
+     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
+               {description = "swap with previous client by index", group = "client"}),
+-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
++    awful.key({ modkey,           }, "q", function () awful.screen.focus_relative( 1) end,
+               {description = "focus the next screen", group = "screen"}),
+-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
+-              {description = "focus the previous screen", group = "screen"}),
+     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
+               {description = "jump to urgent client", group = "client"}),
+     awful.key({ modkey,           }, "Tab",
+@@ -316,7 +314,7 @@ globalkeys = gears.table.join(
+               {description = "open a terminal", group = "launcher"}),
+     awful.key({ modkey, "Control" }, "r", awesome.restart,
+               {description = "reload awesome", group = "awesome"}),
+-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
++    awful.key({ modkey, "Control" }, "F4", awesome.quit,
+               {description = "quit awesome", group = "awesome"}),
+ 
+     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+@@ -362,8 +360,8 @@ globalkeys = gears.table.join(
+               end,
+               {description = "lua execute prompt", group = "awesome"}),
+     -- Menubar
+-    awful.key({ modkey }, "p", function() menubar.show() end,
+-              {description = "show the menubar", group = "launcher"})
++    awful.key({ modkey }, "p", function() awful.util.spawn("synapse") end,
++              {description = "start a launcher", group = "launcher"})
+ )
+ 
+ -- @DOC_CLIENT_KEYBINDINGS@
+@@ -374,13 +372,13 @@ clientkeys = gears.table.join(
+             c:raise()
+         end,
+         {description = "toggle fullscreen", group = "client"}),
+-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
++    awful.key({ modkey,           }, "c",      function (c) c:kill()                         end,
+               {description = "close", group = "client"}),
+     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
+               {description = "toggle floating", group = "client"}),
+     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
+               {description = "move to master", group = "client"}),
+-    awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
++    awful.key({ modkey, "Shift"   }, "q",      function (c) c:move_to_screen()               end,
+               {description = "move to screen", group = "client"}),
+     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
+               {description = "toggle keep on top", group = "client"}),
+-- 
+2.13.6
+
