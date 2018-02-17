@@ -18,6 +18,8 @@ Patch2:		0002-Use-dex-autostart-to-run-xdg-desktop-files.patch
 Patch3:		0003-Show-qubes-color-borders.patch
 Patch4:		0004-Show-domain-name-in-titles.patch
 Patch5:		0005-Add-QubesOS-specific-menu.patch
+Patch6:		0006-Remove-stupid-layouts.patch
+Patch7:		0007-Rework-Keybindings.patch
 
 BuildRequires:	cmake >= 3.0.0
 
@@ -102,6 +104,8 @@ cp %{_sourcedir}/qubes.lua.in lib/qubes.lua
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
+%patch7 -p1
 
 %build
 mkdir build; pushd build
