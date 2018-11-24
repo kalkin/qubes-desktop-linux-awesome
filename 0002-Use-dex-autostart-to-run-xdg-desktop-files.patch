@@ -3,7 +3,7 @@ From: Mark Walters <markwalters1009@gmail.com>
 Date: Sat, 10 Sep 2016 18:07:26 +0100
 Subject: [PATCH] Use dex-autostart to run xdg desktop files
 
-We set dex-autostart to run all the desktop files for XFCE as there
+We set dex to run all the desktop files for XFCE as there
 are some things we do want (in particular xscreensaver) that are
 listed as XFCE only. It may start some things that are not needed,
 (eg xfsettingsd) but this does not seem to cause a problem.
@@ -24,7 +24,7 @@ index 0130b0d7..b83b2eb7 100644
 +
 +-- Use dex to run the xdg autostart files
 +-- for the moment run the ones for XFCE
-+awful.spawn('bash -c "pgrep -f -a mqui.tray | grep -v $$ || dex-autostart -a -e XFCE"')
++awful.spawn('bash -c "pgrep -f -a mqui.tray | grep -v $$ || dex -a -e XFCE"')
 -- 
 2.14.1
 
