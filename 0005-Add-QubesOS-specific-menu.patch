@@ -9,11 +9,11 @@ Signed-off-by: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
  1 file changed, 1 insertion(+), 4 deletions(-)
 
 diff --git a/awesomerc.lua b/awesomerc.lua
-index af841a24..67b1e3d5 100644
+index d6da869e..a01cdec6 100644
 --- a/awesomerc.lua
 +++ b/awesomerc.lua
-@@ -122,10 +122,7 @@ myawesomemenu = {
-    { "quit", function() awesome.quit() end}
+@@ -111,10 +111,7 @@ myawesomemenu = {
+    { "quit", function() awesome.quit() end },
  }
  
 -mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },

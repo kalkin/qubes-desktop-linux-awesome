@@ -9,10 +9,10 @@ Signed-off-by: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
  1 file changed, 13 insertions(+), 1 deletion(-)
 
 diff --git a/awesomerc.lua b/awesomerc.lua
-index 571a1190..af841a24 100644
+index 63431c72..d6da869e 100644
 --- a/awesomerc.lua
 +++ b/awesomerc.lua
-@@ -17,6 +17,18 @@ require("awful.hotkeys_popup.keys")
+@@ -21,6 +21,18 @@ require("awful.hotkeys_popup.keys")
  
  local qubes = require("qubes")
  
@@ -31,7 +31,7 @@ index 571a1190..af841a24 100644
  
  -- {{{ Error handling
  -- @DOC_ERROR_HANDLING@
-@@ -559,7 +571,7 @@ client.connect_signal("request::titlebars", function(c)
+@@ -567,7 +579,7 @@ client.connect_signal("request::titlebars", function(c)
          { -- Middle
              { -- Title
                  align  = "center",

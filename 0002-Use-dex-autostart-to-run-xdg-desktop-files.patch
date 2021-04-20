@@ -14,10 +14,10 @@ Signed-off-by: Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>
  1 file changed, 4 insertions(+)
 
 diff --git a/awesomerc.lua b/awesomerc.lua
-index 0130b0d7..b83b2eb7 100644
+index 91e684ee..dc4babd3 100644
 --- a/awesomerc.lua
 +++ b/awesomerc.lua
-@@ -582,3 +582,7 @@ end)
+@@ -587,3 +587,7 @@ end)
  client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
  client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
  -- }}}
